@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Biodata Form</h1>
+
+    <form action="">
+      <div class="form-group name">
+        <label for="name">Name</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your full Name"
+          /><img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group email">
+        <label for="email">Email</label>
+        <div class="input-container">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+          /><img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group phone">
+        <label for="phone">Phone</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Enter your phone number"
+          />
+          <img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group address add1">
+        <label for="addressOne">Address One</label>
+        <div class="input-container">
+          <textarea
+            name="addressOne"
+            id="addressOne"
+            cols="30"
+            rows="2"
+            placeholder="Enter your address"
+          ></textarea>
+          <img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group address">
+        <label for="addressTwo">Address Two</label>
+        <div class="input-container">
+          <textarea
+            name="addressTwo"
+            id="addressTwo"
+            cols="30"
+            rows="2"
+            placeholder="Enter your second address (optional)"
+          ></textarea>
+          <img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group purpose">
+        <label for="purpose">What are yor applying for?</label>
+        <div class="input-container">
+          <select name="purpose" id="purpose">
+            <option value="" disabled selected>Select</option>
+            <option value="job">Job</option>
+            <option value="freelance">Freelance</option>
+            <option value="internship">Internship</option>
+            <option value="other">Others</option>
+          </select>
+          <img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group hidden other-purpose" id="other-purpose">
+        <div class="input-container">
+          <input
+            type="text"
+            name="otherPurpose"
+            id="otherPurpose"
+            placeholder="Fill this if you want to apply for something else"
+          />
+          <img src="./error.png" alt="error icon" />
+        </div>
+
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-action">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
