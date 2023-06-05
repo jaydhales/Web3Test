@@ -2,9 +2,17 @@ const form = document.querySelector('form');
 const purposeInput = document.querySelector('#purpose');
 let errorCheck = false;
 
-const runValidation = (formItem, errorElement, errorMatch, errorMessage) => {
+const runValidation = (formItem, errorElement, errorMatch, errorMessage, custom = false) => {
     let elem = document.querySelector(`.form-group.${errorElement}`);
     let error = false;
+
+    if (custom) {
+        if (!errorMatch) {
+            error = true;
+            elem.classList.add('error');
+            elem.querySelector('.error-message').textContent = errorMessage;
+        }
+    }
 
     if (formItem === errorMatch) {
         error = true;
@@ -25,6 +33,8 @@ form.addEventListener('submit', (e) => {
     let address = formData.get('addressOne');
     let purpose = formData.get('purpose');
     let otherPurpose = formData.get('otherPurpose');
+    let mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let numRegex = /^\d{11}$/;
 
 
 
@@ -34,8 +44,12 @@ form.addEventListener('submit', (e) => {
     }
     if (runValidation(email, "email", '', `Please enter your email`)) {
         errorCheck = true;
+    } else if (runValidation(email, "email", email.match(mailRegex), `Email is not valid`, true)) {
+        errorCheck = true;
     }
     if (runValidation(phone, "phone", '', `Please enter your phone number`)) {
+        errorCheck = true;
+    } else if (runValidation(phone, "phone", phone.match(numRegex), `Phone Number is not correct`, true)) {
         errorCheck = true;
     }
     if (runValidation(address, "add1", '', `Please enter your address`)) {
