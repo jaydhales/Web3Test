@@ -1,5 +1,7 @@
 # Web3bridge IX Assessment Test
 
+### Live Link : https://web3-test-chi.vercel.app
+
 ### Languages/ Tools used: 
 - Html
 - Css
